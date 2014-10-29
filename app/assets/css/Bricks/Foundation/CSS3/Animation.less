@@ -1,0 +1,103 @@
+//
+//  Bricks/Foundation/CSS3/Animation
+//
+
+
+.animation(...) {
+
+  @process: ~`(function(t){return t=t||"none",/^[^, ]*,/.test(t)&&(t=t.replace(/(?:,)(?![^(]*\))/g,"")),t})((function(){var t="@{arguments}";return t=t.replace(/^\[|\]$/g,"")})())`;
+
+  -webkit-animation: @process;
+  -moz-animation: @process;
+  -o-animation: @process;
+  animation: @process;
+
+}
+
+.animation-delay(...) {
+
+  @process: ~`(function(t){t=t||"0";var r=/(?:\d)(?:ms|s)/gi,e=/(?:\s|^)(\.?\d+\.?\d*)(?![^(]*\)|\w|%|\.)/gi;return r.test(t)||"0"===t||(t=t.replace(e,function(t){return t+=parseFloat(t,10)>10?"ms":"s"})),t})((function(){var t="@{arguments}";return t=t.replace(/^\[|\]$/g,"")})())`;
+
+  -webkit-animation-delay: @process;
+  -moz-animation-delay: @process;
+  -o-animation-delay: @process;
+  animation-delay: @process;
+
+}
+
+.animation-direction(...) {
+
+  @process: ~`(function(r){return r||"normal"})((function(){var r="@{arguments}";return r=r.replace(/^\[|\]$/g,"")})())`;
+
+  -webkit-animation-direction: @process;
+  -moz-animation-direction: @process;
+  -o-animation-direction: @process;
+  animation-direction: @process;
+
+}
+
+.animation-duration(...) {
+
+  @process: ~`(function(r){r=r||"0";var t=/ms|s/gi,e=/(?:\s|^)(\.?\d+\.?\d*)(?![^(]*\)|\w|%|\.)/gi;return t.test(r)||"0"===r||(r=r.replace(e,function(r){return r+=parseFloat(r,10)>10?"ms":"s"})),r})((function(){var r="@{arguments}";return r=r.replace(/^\[|\]$/g,"")})())`;
+
+  -webkit-animation-duration: @process;
+  -moz-animation-duration: @process;
+  -o-animation-duration: @process;
+  animation-duration: @process;
+
+}
+
+.animation-fill-mode(...) {
+
+  @process: ~`(function(r){return r||"none"})((function(){var r="@{arguments}";return r=r.replace(/^\[|\]$/g,"")})())`;
+
+  -webkit-animation-fill-mode: @process;
+  -moz-animation-fill-mode: @process;
+  -o-animation-fill-mode: @process;
+  animation-fill-mode: @process;
+
+}
+
+.animation-iteration-count(...) {
+
+  @process: ~`(function(r){return r||"0"})((function(){var r="@{arguments}";return r=r.replace(/^\[|\]$/g,"")})())`;
+
+  -webkit-animation-iteration-count: @process;
+  -moz-animation-iteration-count: @process;
+  -o-animation-iteration-count: @process;
+  animation-iteration-count: @process;
+
+}
+
+.animation-name(...) {
+
+  @process: ~`(function(r){return r||"none"})((function(){var r="@{arguments}";return r=r.replace(/^\[|\]$/g,"")})())`;
+
+  -webkit-animation-name: @process;
+  -moz-animation-name: @process;
+  -o-animation-name: @process;
+  animation-name: @process;
+
+}
+
+.animation-play-state(...) {
+
+  @process: ~`(function(r){return r||"running"})((function(){var r="@{arguments}";return r=r.replace(/^\[|\]$/g,"")})())`;
+
+  -webkit-animation-play-state: @process;
+  -moz-animation-play-state: @process;
+  -o-animation-play-state: @process;
+  animation-play-state: @process;
+
+}
+
+.animation-timing-function(...) {
+
+  @process: ~`(function(r){return r||"ease"})((function(){var r="@{arguments}";return r=r.replace(/^\[|\]$/g,"")})())`;
+
+  -webkit-animation-timing-function: @process;
+  -moz-animation-timing-function: @process;
+  -o-animation-timing-function: @process;
+  animation-timing-function: @process;
+
+}

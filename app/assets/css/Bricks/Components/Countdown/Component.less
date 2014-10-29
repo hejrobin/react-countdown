@@ -1,0 +1,110 @@
+//
+//  Bricks/Components/Countdown
+//
+
+
+
+body {
+
+  @color: #5c4152;
+
+  background: darken(@color, 5%);
+  color: lighten(@color, 15%);
+
+}
+
+#countdown-timer {
+
+  height: 100%;
+
+}
+
+.countdown-- {
+
+  &timer {
+
+    text-align: center;
+    .transform(translateY(-50%));
+    position: relative;
+    top: 50%;
+
+    h1 {
+
+      .decimal-unit(margin-top, -3);
+      .decimal-unit(margin-bottom, 3);
+      font-family: Lato, Helvetica, sans-serif;
+      .decimal-unit(font-size, 6);
+
+    }
+
+    .timer {
+
+      &--segment {
+
+        .decimal-unit(padding, 1);
+        font-family: Lato, Helvetica, sans-serif;
+        text-align: center;
+        display: inline-block;
+
+        &_name,
+        &_data {
+
+          .decimal-unit(padding, .75);
+
+        }
+
+        &_name {
+
+          text-transform: uppercase;
+          font-weight: 700;
+          .decimal-unit(font-size, 1.2);
+          display: block;
+
+        }
+
+        &_data {
+
+          font-weight: 100;
+          .decimal-unit(font-size, 14);
+
+        }
+
+        &_days {
+
+          @color: #b4585d;
+          background: @color;
+          color: darken(@color, 20%);
+
+        }
+
+        &_hours {
+
+          @color: #d97f76;
+          background: @color;
+          color: darken(@color, 20%);
+
+        }
+
+        &_minutes {
+
+          @color: #f7d0a9;
+          background: @color;
+          color: darken(@color, 20%);
+
+        }
+
+        &_seconds {
+
+          @color: #a1c0ae;
+          background: @color;
+          color: darken(@color, 20%);
+
+        }
+
+      }
+
+    }
+
+  }
+
+}

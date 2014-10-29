@@ -1,0 +1,148 @@
+//
+//  Bricks/Foundation/Layout/Scaffolding
+//
+
+
+//
+//  Settings
+//
+
+@wrap-sizes: 72, 96, 120;
+
+
+
+//
+//  Helpers
+//
+
+.generate-layout(@size, @columns, @prefix) {
+
+  .join(@columns, ', ', @prefix);
+
+  // @{string} is the output from .join
+  @{string} {
+
+    width: percentage(@size);
+
+  }
+
+}
+
+
+
+//
+//  Reset
+//
+
+#wrapper,
+.wrap {
+
+  margin: 0 auto;
+
+}
+
+html,
+#wrapper,
+#inner {
+
+  height: 100%;
+
+}
+
+body {
+
+  height: 100%;
+  min-height: 100%;
+
+}
+
+.for(@wrap-sizes); .-each(@wrap-size) {
+
+  @wrap-size-pixels: @wrap-size * 10;
+
+  body.wrap-at-@{wrap-size-pixels}px .wrap,
+  body.contain-wrap.wrap-at-@{wrap-size-pixels}px div#wrapper {
+
+    .decimal-unit(max-width, @wrap-size);
+
+  }
+
+}
+
+.col {
+
+  float: left;
+
+}
+
+
+
+//  Small Screen
+
+.small-screen() {
+
+  //  Greedy Reset
+  .generate-layout(1, a b c d e, '.col-');
+
+  //  Layout - Grid - Four columns
+
+  .generate-layout(.5, a b c d, '.grid .col-');
+
+  //  Layout - Cluster - Five columns
+
+  .generate-layout(.5, a b c d, '.cluster .col-');
+  .generate-layout(1, e, '.cluster .col-');
+
+}
+
+
+
+// Medium Screen
+
+.medium-screen() {
+
+  //  Layout - Deux - Two columns
+
+  .generate-layout(.5, a b, '.deux .col-');
+
+  //  Layout - Columns - Three columns
+
+  .generate-layout(.33, a c, '.columns .col-');
+  .generate-layout(.34, b, '.columns .col-');
+
+  //  Layout - Grid - Four columns
+
+  .generate-layout(.25, a b c d, '.grid .col-');
+
+  //  Layout - Cluster - Five columns
+
+  .generate-layout(.33, a c e, '.cluster .col-');
+  .generate-layout(.34, b d, '.cluster .col-');
+
+}
+
+
+//
+//  Large Screen
+//
+
+.large-screen() {
+
+  //  Layout - Deux - Two columns
+
+  .generate-layout(.5, a b, '.deux .col-');
+
+  //  Layout - Columns - Three columns
+
+  .generate-layout(.33, a c, '.columns .col-');
+  .generate-layout(.34, b, '.columns .col-');
+
+  //  Layout - Grid - Four columns
+
+  .generate-layout(.25, a b c d, '.grid .col-');
+
+  //  Layout - Cluster - Five columns
+
+  .generate-layout(.2, a b c d e, '.cluster .col-');
+
+}

@@ -1,0 +1,117 @@
+//
+//  Bricks/Core/Helpers/Typography
+//
+
+
+
+//
+//  Typography Mixins - @font-face
+//
+
+.font-face(@family, @file, @weight: normal, @style: normal) {
+  font-family: "@{family}";
+  src: url("@{file}.eot");
+  src: url("@{file}.eot?#iefix") format("embedded-opentype"),
+    url("@{file}.woff") format("woff"),
+    url("@{file}.ttf") format("truetype"),
+    url("@{file}.svg#@{family}") format("svg");
+  font-weight: @weight;
+  font-style: @style;
+}
+
+
+
+//
+//  Typography Mixins - Behaviour
+//
+
+.wrap(...) {
+
+  text-wrap: wrap;
+  white-space: pre-wrap;
+  white-space: -moz-pre-wrap;
+  word-wrap: break-word;
+
+}
+
+.truncate-text(...) {
+
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+
+}
+
+.tab-size(@tab-size: 4) {
+
+  -webkit-tab-size: @tab-size;
+  -moz-tab-size: @tab-size;
+  -o-tab-size: @tab-size;
+  tab-size: @tab-size;
+
+}
+
+.user-select(@user-select) {
+
+  -webkit-user-select: @user-select;
+  -moz-user-select: @user-select;
+  user-select: @user-select;
+
+}
+
+
+
+//
+//  Typography Mixins - Families
+//
+
+.font-family-heading() {
+
+  font-family: @font-families-headings;
+
+}
+
+.font-family-special-heading() {
+
+  font-family: @font-families-special-headings;
+
+}
+
+.font-family-copy() {
+
+  font-family: @font-families-copy;
+
+}
+
+.font-family-special-copy() {
+
+  font-family: @font-families-special-copy;
+
+}
+
+
+
+//
+//  Typography Mixins - Behaviour
+//
+
+.font-size(@value) {
+
+  .decimal-unit(font-size, @value);
+
+}
+
+.line-height(@value) {
+
+  .decimal-unit(line-height, @value);
+
+}
+
+.typography-size(@font-size, @line-height-multiplier: 1.5) {
+
+  @line_height: ceil(@font-size * @line-height-multiplier);
+
+  .font-size(@font-size);
+  .line-height(@line-height);
+
+}

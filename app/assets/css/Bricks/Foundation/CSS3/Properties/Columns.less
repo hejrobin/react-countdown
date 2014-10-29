@@ -1,0 +1,37 @@
+//
+//  Bricks/Foundation/CSS3/Properties/Columns
+//
+
+
+
+.columns(...) {
+
+  -webkit-columns: @arguments;
+  -moz-columns: @arguments;
+  columns: @arguments;
+
+}
+
+.column-gap(@depth) {
+
+  .decimal-unit(-webkit-column-gap, @depth);
+  .decimal-unit(-moz-column-gap, @depth);
+  .decimal-unit(column-gap, @depth);
+
+}
+
+.column-rule(...) {
+
+  -webkit-column-rule: @arguments;
+  -moz-column-rule: @arguments;
+  column-rule: @arguments;
+
+}
+
+.column-fill(@fill) {
+
+  -webkit-column-fill: @fill;
+  -moz-column-fill: @fill;
+  column-fill: @fill;
+
+}

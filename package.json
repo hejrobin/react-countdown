@@ -1,0 +1,35 @@
+{
+  "private": true,
+  "name": "react-countdown",
+  "description": "A simple countdown timer written in CoffeeScript and React.",
+  "keywords": [
+    "grunt",
+    "react",
+    "coffeescript"
+  ],
+  "licence": "MIT",
+  "version": "0.1.0",
+  "author": {
+    "name": "Robin Grass",
+    "email": "hej@carbin.se",
+    "url": "https://github.com/lessthanthree"
+  },
+  "engines": {
+    "node": "~0.10.0",
+    "npm": "~1.4.0"
+  },
+  "dependencies": {},
+  "devDependencies": {
+
+    "load-grunt-tasks": "~0.6.0",
+    "grunt": "~0.4.5",
+
+    "coffeelint-cjsx": "git://github.com/leyyinad/coffeelint-cjsx.git",
+    "grunt-coffee-react": "~1.0.3",
+    "grunt-coffeelint": "~0.0.13",
+    "grunt-contrib-coffee": "~0.12.0",
+
+    "grunt-contrib-less": "~0.11.3"
+
+  }
+}

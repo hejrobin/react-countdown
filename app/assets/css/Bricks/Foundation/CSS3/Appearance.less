@@ -1,0 +1,25 @@
+//
+//  Bricks/Foundation/CSS3/Appearance
+//
+
+
+
+.appearance(...) {
+
+  @process: ~`(function(r){return r||"none"})((function(){var r="@{arguments}";return r=r.replace(/^\[|\]$/g,"")})())`;
+
+  -webkit-appearance: @process;
+  -moz-appearance: @process;
+  appearance: @process;
+
+}
+
+.backface-visibility(...) {
+
+  -webkit-backface-visibility: @arguments;
+  -moz-backface-visibility: @arguments;
+  -ms-backface-visibility: @arguments;
+  -o-backface-visibility: @arguments;
+  backface-visibility: @arguments;
+
+}

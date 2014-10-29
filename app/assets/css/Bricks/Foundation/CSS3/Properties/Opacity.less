@@ -1,0 +1,15 @@
+//
+//  Bricks/Foundation/CSS3/Properties/Opacity
+//
+
+
+
+.opacity(@value) {
+
+  @ie_opacity: ceil(@value * 10);
+
+  -ms-filter: ~"progid:DXImageTransform.Microsoft.Alpha(Opacity=@{ie_opacity})";
+  -moz-opacity: @opacity;
+  opacity: @value;
+
+}

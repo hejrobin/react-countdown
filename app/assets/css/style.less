@@ -1,0 +1,287 @@
+@charset "UTF-8";
+
+
+
+//
+//  Developer Guide
+//
+//  * CSS Level 3 properties uses mixins for vendor prefixing, i.e. ".border-radius", ".box-shadow" etc.
+//  * All units are in decimal format, and converted into pixels (to provide concistency between px and percentages).
+//  * Modules (e.g. "Office Card") reside in "Bricks/Components/<Component>/Component.less"
+//    E.g. "Bricks/Modules/Cards/Office.less" and/or "Bricks/Modules/Modals/Flash.less"
+//  * Available layout modes are; small-screen, medium-screen, large-screen.
+//
+
+
+
+//
+//  Bricks/Core
+//
+
+@import "Bricks/Core/Constants";
+@import "Bricks/Core/Functions";
+@import "Bricks/Core/Swatches";
+@import "Bricks/Core/Settings";
+
+  //  Bricks/Core/Helpers
+
+  @import "Bricks/Core/Helpers/Color";
+  @import "Bricks/Core/Helpers/Typography";
+
+
+
+//
+//  Bricks/Foundation
+//
+
+@import "Bricks/Foundation/CSS3";
+@import "Bricks/Foundation/Layout";
+@import "Bricks/Foundation/Typography";
+
+  //  Bricks/Foundation/Layout
+
+  @import "Bricks/Foundation/Layout/Reset";
+  @import "Bricks/Foundation/Layout/Scaffolding";
+
+
+
+//
+//  Bricks/Components
+//
+
+@import "Bricks/Components";
+
+
+
+//
+//  Small And Medium Screen
+//
+
+@media @small-screen, @medium-screen {
+
+  .hidden-for-small-and-medium-screen {
+
+    display: none !important;
+
+  }
+
+  .invisible-for-small-and-medium-screen {
+
+    visibility: hidden !important;
+
+  }
+
+  .small-and-medium-screen();
+
+  .small-and-medium-screen-typography();
+
+}
+
+
+
+//
+//  Small Screen
+//
+
+@media @small-screen {
+
+  .viewport-rendering-mode:after {
+
+    content: 'Small';
+
+  }
+
+  .hidden-for-small-screen {
+
+    display: none !important;
+
+  }
+
+  .invisible-for-small-screen {
+
+    visibility: hidden !important;
+
+  }
+
+  .small-screen();
+
+  .small-screen-typography();
+
+}
+
+  //  Small Screen - Portrait
+
+  @media @small-screen-portrait {
+
+    .hidden-for-small-screen-portrait {
+
+      display: none !important;
+
+    }
+
+    .invisible-for-small-screen-landportraitscape {
+
+      visibility: hidden !important;
+
+    }
+
+    .small-screen-portrait();
+
+  }
+
+  //  Small Screen - Landscape
+
+  @media @small-screen-landscape {
+
+    .hidden-for-small-screen-landscape {
+
+      display: none !important;
+
+    }
+
+    .invisible-for-small-screen-landscape {
+
+      visibility: hidden !important;
+
+    }
+
+    .small-screen-landscape();
+
+  }
+
+
+
+//
+//  Medium Screen
+//
+
+@media @medium-screen {
+
+  .viewport-rendering-mode:after {
+
+    content: 'Medium';
+
+  }
+
+  .hidden-for-medium-screen {
+
+    display: none !important;
+
+  }
+
+  .invisible-for-medium-screen {
+
+    visibility: hidden !important;
+
+  }
+
+  .medium-screen();
+
+  .medium-screen-typography();
+
+}
+
+  //  Medium Screen - Portrait
+
+  @media @medium-screen-portrait {
+
+    .hidden-for-medium-screen-portrait {
+
+      display: none !important;
+
+    }
+
+    .invisible-for-medium-screen-portrait {
+
+      visibility: hidden !important;
+
+    }
+
+    .medium-screen-portrait();
+
+  }
+
+  //  Medium Screen - Landscape
+
+  @media @medium-screen-landscape {
+
+    .hidden-for-medium-screen-landscape {
+
+      display: none !important;
+
+    }
+
+    .invisible-for-medium-screen-landscape {
+
+      visibility: hidden !important;
+
+    }
+
+    .medium-screen-landscape();
+
+  }
+
+
+
+//
+//  Large Screen
+//
+
+@media @large-screen {
+
+  .viewport-rendering-mode:after {
+
+    content: 'Large';
+
+  }
+
+  .hidden-for-large-screen {
+
+    display: none !important;
+
+  }
+
+  .invisible-for-large-screen {
+
+    visibility: hidden !important;
+
+  }
+
+  .large-screen();
+
+  .large-screen-typography();
+
+}
+
+
+
+
+//
+//  Extra Large Screen
+//
+
+@media @extra-large-screen {
+
+  .viewport-rendering-mode:after {
+
+    content: 'X-Large';
+
+  }
+
+  .hidden-for-extra-large-screen {
+
+    display: none !important;
+
+  }
+
+  .invisible-for-extra-large-screen {
+
+    visibility: hidden !important;
+
+  }
+
+  .extra-large-screen();
+
+  .extra-large-screen-typography();
+
+}

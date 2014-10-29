@@ -1,0 +1,96 @@
+//
+//  Bricks/Core/Helpers/Color
+//
+
+
+
+//
+//  Helpers
+//
+
+.define-swatch(@name) {
+
+  // Variable name interpolation
+  @swatch: "swatch-@{name}";
+
+}
+
+
+
+//
+//  Color Conversion
+//
+
+.color-rgb(@color) {
+
+  @-: rgb(
+    red(@color),
+    green(@color),
+    blue(@color)
+  );
+
+}
+
+.color-rgba(@color, @opacity: 1) {
+
+  @-: rgba(
+    red(@color),
+    green(@color),
+    blue(@color),
+    @opacity
+  );
+
+}
+
+
+
+//
+//  Foreground
+//
+
+.foreground-rgb(@color) {
+
+  // @- is variable named "returned" from mixin/function.
+  color: @-; .color-rgb(@color);
+
+}
+
+.foreground-rgba(@color, @opacity: 1) {
+
+  color: @-; .color-rgba(@color, @opacity);
+
+}
+
+.foreground-color(@name) {
+
+  .define-swatch(@name);
+  // Double @ used for variable interpolation
+  color: @@swatch;
+
+}
+
+
+
+//
+//  Background
+//
+
+.background-color-rgb(@color) {
+
+  background-color: @-;.color-rgb(@color);
+
+}
+
+.background-color-rgba(@color, @opacity: 1) {
+
+  background-color: @-;.color-rgba(@color, @opacity);
+
+}
+
+.background-color(@name) {
+
+  .define-swatch(@name);
+  // Double @ used for variable interpolation
+  background-color: @@swatch;
+
+}

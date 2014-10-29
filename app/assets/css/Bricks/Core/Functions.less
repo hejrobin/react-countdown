@@ -1,0 +1,138 @@
+//
+//  Bricks/Core/Functions
+//
+
+
+
+//
+//  join
+//
+//  @list: banana, apple, pear, potato, carrot, peach;
+//
+//  .join(@list, ', ');
+//
+//  .animals {
+//    content: @{string}
+//  }
+//
+
+.join(...) {}
+
+.join(@arr) {
+
+  .join(@word, '');
+
+}
+
+.join(@arr, @glue, @prefix: "", @suffix: "") {
+
+  .join(@word, @arr, @glue, @n) when (@n >= 0) {
+
+    .-return(@wordResult, @n2) when (@n2 = 0) {
+
+      @string: ~'@{prefix}@{wordResult}@{suffix}';
+
+    }
+
+    .-return(@word, @n);
+
+    @add: extract(@arr, @n);
+
+    .join('@{add}@{glue}@{prefix}@{word}@{suffix}', @arr, @glue, (@n - 1));
+
+  }
+
+  @last: extract(@arr, length(@arr));
+
+  .join(@last, @arr, @glue, (length(@arr) - 1));
+
+}
+
+
+
+//
+//  for
+//
+//  #selector {
+//    .for(6); .-each(@i) { ... }
+//  }
+//
+
+.for(@i, @n) {
+
+  .-each(@i);
+
+}
+
+.for(@n) when (isnumber(@n)) {
+
+  .for(1, @n);
+
+}
+
+.for(@i, @n) when not (@i = @n)  {
+
+  .for((@i + (@n - @i) / abs(@n - @i)), @n);
+
+}
+
+
+
+//
+//  foreach
+//
+//  @list: banana, apple, pear, potato, carrot, peach;
+//
+//  #selector {
+//    .for(@list); .-each(@item) { ... }
+//  }
+//
+
+.for(@array) when (default()) {
+
+  .for-impl_(length(@array));
+
+}
+
+.for-impl_(@i) when (@i > 1) {
+
+  .for-impl_((@i - 1));
+
+}
+
+.for-impl_(@i) {
+
+  .-each(extract(@array, @i));
+
+}
+
+
+
+//
+//  decimal-unit
+//
+//  foo {
+//    .decimal-unit(property, 1.5)
+//  }
+//
+
+.decimal-unit(@property, @value) {
+
+  @{property}: unit(ceil(@value * 10), px);
+
+}
+
+
+
+//
+//  font-size
+//
+
+.font-size(@font-size, @multiplier: 1) {
+
+  @calculated-font-size: ceil(@font-size * 10);
+
+  font-size: unit(@calculated-font-size, px);
+  line-height: unit(ceil(@calculated-font-size * @multiplier), px);
+
+}
